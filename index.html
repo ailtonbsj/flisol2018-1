@@ -1,0 +1,586 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<base href="./node_modules/reveal.js/">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<style type="text/css">
+			.whoami pre {
+				font-size: 70%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>JavaScript</h1>
+					<h3>De plebeu a rei</h3>
+					<p>
+						<small>Criado com <a href="https://github.com/hakimel/reveal.js">reveal.js</a> por <a href="https://github.com/ailtonbsj">ailtonbsj</a></small>
+					</p>
+				</section>
+				<section data-markdown class="whoami">
+					<script type="text/template">
+						## $ whoami
+
+						```
+						{
+							name: "José Ailton",
+							degree: "Tecnólogo em Mecatrônica Industrial",
+							work: "Suporte técnico em TI na CREDE17",
+							blog: "ailtonbsj.wordpress.com",
+							portfolio: "orkideaplus.esy.es",
+							github: "github.com/ailtonbsj",
+							channel: "youtube.com/user/JoseAiltonBS"
+						}
+						```
+					</script>
+				</section>
+				<section>
+					<h4>Porque JavaScript?</h4>
+					<iframe src="https://rawgit.com/ailtonbsj/arcade-js/master/tetris.html" style="width: 100%; height: 500px;"></iframe>
+				</section>
+				<section>
+					<h4>(1990) Tim Berners-Lee cria a WWW</h4>
+					<img src="../../imgs/timbernerslee.jpg">
+				</section>
+				<section>
+					<h4>(1994) Netscape domina mercado de browsers</h4>
+					<img src="../../imgs/netscape.png">
+				</section>
+				<section data-background="../../imgs/brendaneich.gif">
+						<h3>(1995) Brendan Eich cria o JavaScript</h3>
+						<h4>{ Mocha / LiveScript }</h4>
+				</section>
+				<section data-background="../../imgs/ie.gif">
+					<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+						<h3>Microsoft lança Windows 95 com Internet Explorer</h3>
+					</div>
+				</section>
+				<section>
+					<h3>Web 2.0</h3>
+					<ul>
+						<li>(1996) Iframe introduzido no IE</li>
+						<li>(1999) AJAX introduzido no IE</li>
+						<li>Exemplos: AutoComplete, Gmail, Maps, Facebook...</li>
+					</ul>
+					<img src="../../imgs/ajax.png">
+				</section>
+				<section>
+					<h3>Ajax Request Exemplo</h3>
+					<pre><code class="hljs" data-trim contenteditable>
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'api.php?name=joao');
+
+xhr.onreadystatechange = function () {
+	var DONE = 4; // readyState 4 means the request is done
+	var OK = 200; // status 200 is a successful return
+	if (xhr.readyState === DONE) {
+		if (xhr.status === OK) {
+			console.log(xhr.responseText);
+		} else {
+			console.log('Error: ' + xhr.status);
+		}
+	}
+};
+xhr.send(null);
+					</code></pre>
+				</section>
+				<section>
+					<h4>(1997) ECMAScript - padronização do JS</h4>
+					<img src="../../imgs/ec-hist.png">
+				</section>
+				<section>
+					<ul>
+						<li>ES1: Versão de "10 dias"</li>
+						<li>ES2: Alinhamento com ISO/IEC 16262</li>
+						<li>ES3: Expressões regulares, try/catch, métodos de strings, do-while.</li>
+						<li>ES4: Abandonada.</li>
+					</ul>
+				</section>
+				<section>
+					<h4>(2002) Mozilla lança o Firefox</h4>
+					<img src="../../imgs/firefox.gif" style="width: 100%;">
+				</section>
+				<section>
+					<h4>(2006) John Resig cria o jQuery</h4>
+					<img src="../../imgs/resig.jpg" style="width: 70%;">
+				</section>
+				<section>
+					<h3>JavaScript vs jQuery</h3>
+					<pre><code class="hljs" data-trim contenteditable>
+//vanilla
+document.getElementsByClassName("myclass");
+//jquery
+$('.myclass');
+
+//ajax with jquery
+$.getJSON('api.php?name=joao', function(data) {
+	console.log(data);
+});
+					</code></pre>
+					<p>Libs pre jQuery: selector.js e behavior.js</p>
+				</section>
+				<section>
+					<h4>(2008) Google lança o Chrome</h4>
+					<img src="../../imgs/chrome.gif" style="width: 100%;">
+				</section>
+				<section>
+					<h4>(2009) Ryan Dahl cria o NodeJS</h4>
+					<img src="../../imgs/dahl.jpg" style="width: 70%;">
+				</section>
+				<section>
+					<h4>NodeJS</h4>
+					<ul>
+						<li>JavaScript everywhere</li>
+						<li>V8 JavaScript Engine</li>
+						<li>Asynchronous I/O (non-blocking I/O)</li>
+					</ul>
+				</section>
+				<section>
+					<h4>(2009) ECMAScript 5. O que há de novo?</h4>
+					<ul>
+						<li>Modo estrito</li>
+						<li>suporte JSON</li>
+						<li>métodos de Array</li>
+						<li>...</li>
+					</ul>
+				</section>
+				<section>
+					<h4>(2010) Isaac Schlueter cria o NPM</h4>
+					<img src="../../imgs/issac.jpg">
+				</section>
+				<section>
+					<h4>Module Counts</h4>
+					<img src="../../imgs/pm.png">
+				</section>
+				<section>
+					<h4>(2011) OpenGL no Browser</h4>
+					<canvas id="glcanvas" width="640" height="480"></canvas>
+					<script src="../../libs/gl-matrix.js"></script>
+  					<script src="../../libs/webgl-demo.js"></script>
+				</section>
+				<section>
+					<h4>Linters</h4>
+					<ul>
+						<li>JSLint (2002)</li>
+						<li>JSHint (2011)</li>
+						<li>ESLint (2013)</li>
+						<li>JSCS (2014)</li>
+						<img src="../../imgs/lint.png">
+					</ul>
+				</section>
+				<section>
+					<h4>(2013) GitHub cria o Electron</h4>
+					<p>JavaScript para Desktop</p>
+					<img src="../../imgs/atom.png">
+				</section>
+				<section>
+					<h4>ES5 - Herança</h4>
+					<ul>
+						<li>JS é baseada em protótipos.</li>
+						<li>Quase "tudo" é um objeto.</li>
+						<li>Object é ancestral de todo objeto.</li>
+					</ul>
+				</section>
+				<section>
+					<h4>ES5 - Herança</h4>
+					<pre><code class="hljs" data-trim contenteditable>
+/* Father Class BEGIN */
+//construct
+function Father(){
+	console.log('Father executed!');
+}
+//properties
+Father.prototype.fathersProp = "Fathers";
+//methods
+Father.prototype.fathersMethod = function(){
+	console.log("Fathers Method!");
+}
+/* Father Class END */
+					</code></pre>
+				</section>
+				<section>
+					<pre><code class="hljs" style="max-height: 100%;">/* Child Class BEGIN */
+//construct
+function Child(){
+  Father.apply(this, arguments); //super
+  console.log('Child executed!');
+}
+//heritage
+Child.prototype = Object.create(Father.prototype);
+//properties
+Child.prototype.childsProp = "Childs";
+//methods
+Child.prototype.childsMethod = function(){
+  console.log("Childs Methods!");
+}
+/* Child Class END */</code></pre>
+				</section>
+				<section>
+					<h4>(2015) ES6 / ES2015 / Harmony</h4>
+					<ul>
+						<li>Classes e Módulos</li>
+						<li>Iterators, Generators, for-of</li>
+						<li>Arrow functions</li>
+						<li>Arrays tipados e Collections</li>
+						<li>Promises</li>
+						<li>Template strings</li>
+						<li>...</li>
+					</ul>
+				</section>
+				<section data-background="../../imgs/elevatedp.gif">
+					<div style="background-color: rgba(0, 0, 0, 0.1); color: #fff; padding: 20px;">
+						<h3>Mais poder ao frontend!</h3>
+					</div>
+				</section>
+				<section>
+					<h4>(2015) ECMAScript 6 nasceu! Como usá-lo?</h4>
+					<ul>
+						<li>Transpilers (Ex.: CoffeeScript)</li>
+						<li>Supersets (Ex.: TypeScript)</li>
+						<li>Babel</li>
+						<li>Polyfill / Polymer Project</li>
+						<li>JSX</li>
+					</ul>
+				</section>
+				<section>
+					<h4>ES2016</h4>
+					<ul>
+						<li>Operador exponencial</li>
+						<li>Array.prototype.includes</li>
+					</ul>
+					<p>&nbsp;</p>
+					<h4>ES2017</h4>
+					<ul>
+						<li>Await/async</li>
+						<li>Atomicidade</li>
+						<li>Shared Memory</li>
+						<li>String padding</li>
+					</ul>
+				</section>
+				<section data-background="../../imgs/fix.gif">
+					<div style="background-color: rgba(0, 0, 0, 0.5); color: #fff; padding: 20px;">
+						<h3>Como é organizar suas tags script</h3>
+					</div>
+				</section>
+				<section>
+					<h4>Módulos em JavaScript</h4>
+					<ul>
+						<li>Importância
+							<ul>
+							<li>Manutenção, Escopo de variáveis, Reuso</li>
+							</ul>
+						</li>
+						<li>Padrões
+							<ul>
+								<li>Funções imediatas (IIFE)</li>
+								<li>Anonymous Closure</li>
+								<li>Global Import</li>
+								<li>Object Interface</li>
+								<li>Revealing Module Pattern</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h4>Funções imediatas (IIFE)</h4>
+					<pre><code class="hljs" data-trim contenteditable>
+(function(x){
+	console.log(x+1);
+})(5);
+					</code></pre>
+				</section>
+				<section>
+					<h4>Anonymous Closure</h4>
+					<pre><code class="hljs" data-trim contenteditable>
+var nota = 4;
+
+(function(){
+
+	nota = 6;
+
+	var elevar = function(){
+		return ++nota;
+	}
+
+	console.log(elevar(nota));
+
+})();
+
+console.log(nota);
+					</code></pre>
+				</section>
+				<section>
+					<h4>Global Import</h4>
+					<pre><code class="hljs" data-trim contenteditable>
+var nota = 4;
+
+(function(globalVar){
+
+	var elevar = function(){
+		globalVar += 1;
+		return globalVar;
+	}
+
+	console.log(elevar(globalVar));
+
+})(nota);
+
+console.log(nota);
+					</code></pre>
+				</section>
+				<section>
+					<h4>Object Interface</h4>
+					<pre><code class="hljs" data-trim contenteditable>
+var sis = (function(){
+	//private
+	var nota = 10;
+	var getNota = function(){return nota;}
+
+	//exported
+	return {
+		media: 19,
+		showMedia: function(){
+			console.log(this.media);
+		}
+	}
+})();
+
+sis.showMedia();
+					</code></pre>
+				</section>
+				<section>
+					<h4>Revealing Module Pattern</h4>
+					<pre><code class="hljs" data-trim contenteditable>
+var sis = (function(){
+	var nota = 10;
+	var media = 19;
+	var getNota = function(){ return nota; }
+	var showMedia = function(){
+		console.log(this.media);
+	}
+
+	return {
+		media: media,
+		showMedia: showMedia
+	}
+})();
+
+sis.showMedia();
+					</code></pre>
+				</section>
+				<section>
+					<h4>Módulos em JavaScript</h4>
+					<ul>
+						<li>CommonJS</li>
+						<li>AMD</li>
+						<li>UMD</li>
+						<li>Módulos no ES6</li>
+					</ul>
+				</section>
+				<section>
+					<h4>CommonJS</h4>
+					<pre><code class="hljs" data-trim contenteditable>
+//Arquivo menu.js
+function menuModule {
+	this.render = function(){
+	  console.log('rendering...');
+	}
+}
+module.exports = menuModule;
+
+//Arquivo index.js
+var vertical = require('menu');
+vertical.render();
+					</code></pre>
+				</section>
+				<section>
+					<h4>AMD</h4>
+					<pre><code class="hljs" data-trim contenteditable>
+define(['menu','sidebar'], function(menu, sidebar){
+	var init = function(){
+		menu.render();
+		sidebar.render();
+	}
+
+	return {
+		init: init
+	}
+});
+					</code></pre>
+				</section>
+				<section>
+					<h4>Módulos no ES6</h4>
+					<pre><code class="hljs" data-trim contenteditable>
+//Arquivo menu.js
+export function render(){
+  console.log('rendering...');
+}
+
+//Arquivo index.js
+import * as vertical from 'menu';
+vertical.render();
+					</code></pre>
+				</section>
+				<section data-background="../../imgs/box.gif">
+					<div style="background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 20px;">
+						<h4>Empacotamento de módulos</h4>
+					</div>
+				</section>
+				<section>
+					<h4>Empacotamento de módulos</h4>
+					<ul>
+						<li>Agrupar módulos em único arquivo</li>
+						<li>Minificar arquivos</li>
+						<li>Uglify files</li>
+						<li>Comprimir midias</li>
+						<li>
+							Ferramentas:
+							<ul>
+								<li><p>WebPack, Browserify, Grunt, Gulp</p></li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h4>Usando o browserify</h4>
+					<pre><code class="hljs" data-trim contenteditable>
+npm init
+npm i uniq --save
+subl index.js
+	//require('uniq')
+npm install browserify --save-dev
+./node_modules/.bin/browserify index.js -o bundle.js
+
+node bundle.js
+subl index.html
+	//<script src="bundle.js"></script>
+					</code></pre>
+				</section>
+				<section data-background="../../imgs/offline.gif" data-background-repeat="repeat" data-background-size="100%">
+					<div style="background-color: rgba(0, 0, 0, 1); color: #fff; padding: 20px;">
+					<h4>Offline JavaScript</h4>
+					<ul>
+						<li>
+							Tipo
+							<ul>
+								<li>Parcial ou completamente Offiline</li>
+								<li>Web offline ou Native offine</li>
+							</ul>
+						</li>
+					</ul>
+					</div>
+				</section>
+				<section>
+					<h4>Offline JavaScript</h4>
+					<ul>
+						<li>
+							Armazenamento
+							<ul>
+								<li>Cache de arquivos</li>
+								<li>AppCache API (deprecated)</li>
+								<li>Service Workers API</li>
+								<li>WebStorage API (localStorage)</li>
+								<li>IndexedDB API</li>
+								<li>WebSQL</li>
+								<li>navigator.onLine</li>
+								<li>offline.js</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+				<h4>Java vs JavaScript</h4>
+				<p class="fragment">Typing (int, char, ...)   &nbsp;&nbsp;&rarr;&nbsp;&nbsp; StrictMode e ES6</p>
+				<p class="fragment">Statements (if, for, ...) &nbsp;&nbsp;&rarr;&nbsp;&nbsp; ES1</p>
+				<p class="fragment">IO Handling (printf, ...) &nbsp;&nbsp;&rarr;&nbsp;&nbsp; ES1</p>
+				<p class="fragment">Operators (+ /,% , ...)   &nbsp;&nbsp;&rarr;&nbsp;&nbsp; ES1 e ES7</p>
+				<p class="fragment">OO (class, new, ...)      &nbsp;&nbsp;&rarr;&nbsp;&nbsp; Prototype e ES6</p>
+				<p class="fragment">Modifiers (public, ...)   &nbsp;&nbsp;&rarr;&nbsp;&nbsp; Prototype e Closures</p>
+				<p class="fragment">Collections (Array, ...)   &nbsp;&nbsp;&rarr;&nbsp;&nbsp; ES1, ES5, ES6, ES2016</p>
+				</section>
+				<section>
+				<h4>Java vs JavaScript</h4>
+				<p class="fragment">Exceptions (try, catch,...)&nbsp;&nbsp;&rarr;&nbsp;&nbsp; ES3</p>
+				<p class="fragment">Components GUI (Swing, ...)&nbsp;&nbsp;&rarr;&nbsp;&nbsp; HTML5, Bootstrap</p>
+				<p class="fragment">Java 2D API				   &nbsp;&nbsp;&rarr;&nbsp;&nbsp; HTML 5 Canvas e SVG</p>
+				<p class="fragment">RegExp       			   &nbsp;&nbsp;&rarr;&nbsp;&nbsp; ES3</p>
+				<p class="fragment">FileHandling (java.io, ...)&nbsp;&nbsp;&rarr;&nbsp;&nbsp; NodeJS</p>
+				<p class="fragment">Multithreading			   &nbsp;&nbsp;&rarr;&nbsp;&nbsp; ServiceWorks e NodeJS</p>
+				<p class="fragment">Database (Java DB, ...)	   &nbsp;&nbsp;&rarr;&nbsp;&nbsp; WebStorage</p>
+				<p class="fragment">Package             	   &nbsp;&nbsp;&rarr;&nbsp;&nbsp; Modules Pattern</p>
+				</section>
+				<section>
+					<h4>StackOverflow Developer Survey Results 2018</h4>
+					<p>Pesquisa feita com 100.000 programadores</p>
+					<img src="../../imgs/so.png" style="width: 25%;">
+				</section>
+				<section>
+					<img src="../../imgs/so2.jpg" style="width: 50%;">
+				</section>
+				<section>
+					<h4>Linguagem mais popular</h4>
+					<img src="../../imgs/mostpop.png">
+				</section>
+				<section>
+					<h4>Framework/Plataforma mais popular</h4>
+					<img src="../../imgs/mostpopf.png">
+				</section>
+				<section>
+					<img src="../../imgs/pullr.png">
+				</section>
+				<section>
+					<h1>Dúvidas?</h1>
+					<div>
+					<!-- Place this tag in your head or just before your close body tag. -->
+					<script async defer src="https://buttons.github.io/buttons.js"></script>
+					<!-- Place this tag where you want the button to render. -->
+					<a class="github-button" href="https://github.com/ailtonbsj" aria-label="Follow @ailtonbsj on GitHub">Follow @ailtonbsj</a>
+					<script src="https://apis.google.com/js/platform.js"></script>
+					<div class="g-ytsubscribe" data-channelid="UCNIOM56u0eFCcR0XHYom3ZQ" data-layout="default" data-count="hidden"></div>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				history: true,
+				transition: 'convex',
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
