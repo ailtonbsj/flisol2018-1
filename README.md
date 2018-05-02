@@ -1,6 +1,9 @@
 # Slides para FliSoL 2018 - JavaScript: De plebeu a rei
 
-Slides da apresentação sobre JavaScript para o FliSoL 2018
+Slides da apresentação sobre JavaScript para o FliSoL 2018.
+
+[Clique aqui para ver online!](https://cdn.rawgit.com/ailtonbsj/flisol2018-1/bb7de2e0/index.html)
+
 
 ## Installation
 
